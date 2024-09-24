@@ -72,3 +72,44 @@ The application will analyze the music and either:
 Automatically add the recommended fingering positions to your sheet music, or
 Provide a set of recommended fingering positions to manually add if the automatic modification is not possible.
 Download or review the modified sheet music.
+
+## Folder Structure
+
+CelloFingers/
+│
+├── app/
+│   ├── static/
+│   │   ├── css/           # CSS files for the web interface
+│   │   ├── js/            # JavaScript files for client-side interactivity
+│   └── templates/         # HTML files for the web interface
+│
+├── core/
+│   ├── music_analysis.py   # Logic for analyzing music and generating fingerings
+│   ├── sheet_modifier.py   # Logic for modifying the sheet music
+│   └── ocr_processing.py   # Logic for handling JPG/PDF OCR using Tesseract
+│
+├── uploads/                # Temporary storage for uploaded sheet music
+│
+├── tests/                  # Unit tests for various components
+│
+├── requirements.txt        # Python dependencies
+├── app.py                  # Entry point of the Flask application
+└── README.md               # Project documentation
+
+## Author
+
+Created by Liquid Monks
+GitHub Profile: Liquid Monks
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions, bug fixes, or new features.
+
+5. Workflow and Setup Tips
+
+### 
+
+* **Git Commits:** To keep track of changes, I recommend committing small changes as follows:
+  * `git add <file>`: Add files to the staging area.
+  * `git commit -m "Short description of what you changed"`: Commit the change.
+  * `git push`: Push the changes to your GitHub repository.
