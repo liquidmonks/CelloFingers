@@ -1,9 +1,9 @@
-Flask==2.3.2              # Web framework for Python
-Pillow==9.3.0             # Python Imaging Library for image manipulation
-music21==6.7.1            # Toolkit for analyzing and processing music (supports MusicXML)
-pdf2image==1.16.3         # Convert PDF files into images
-pytesseract==0.3.10       # Python wrapper for Tesseract OCR
-opencv-python==4.8.0.76   # OpenCV for image processing
-numpy==1.24.3             # NumPy for numerical operations (used by OpenCV)
-reportlab==3.6.12         # Generate PDF files (useful for modifying or creating PDFs)
-Werkzeug==2.3.2           # WSGI utility for Flask (ensure compatibility)
+Flask>=2.3.2              # Web framework for Python
+Pillow>=10.0.0            # Python Imaging Library for image manipulation (supports Python 3.12)
+music21>=6.7.1            # Toolkit for analyzing and processing music (supports MusicXML)
+pdf2image>=1.16.3         # Convert PDF files into images
+pytesseract>=0.3.10       # Python wrapper for Tesseract OCR
+opencv-python>=4.8.0.76   # OpenCV for image processing
+numpy>=1.24.3             # NumPy for numerical operations (used by OpenCV)
+reportlab>=3.6.12         # Generate PDF files (useful for modifying or creating PDFs)
+Werkzeug>=2.3.2           # WSGI utility for Flask (ensure compatibility)
