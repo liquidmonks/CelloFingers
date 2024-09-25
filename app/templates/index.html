@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CelloFingers - Upload Your Sheet Music</title>
+    <!-- Optional: Include Bootstrap for better styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <header class="mt-5">
+            <h1>CelloFingers</h1>
+            <p class="lead">Upload your cello sheet music and get recommended finger positions for optimal playing experience.</p>
+        </header>
+
+        <!-- Flash messages for errors or success notifications -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-info">
+              {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Upload Form -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- File Upload Input -->
+            <div class="mb-3">
+                <label for="file" class="form-label">Choose your sheet music file (PDF, JPG, or MusicXML):</label>
+                <input class="form-control" type="file" name="file" id="file" accept=".pdf, .jpg, .jpeg, .xml, .musicxml" required>
+            </div>
+
+            <!-- Skill Level Selection -->
+            <div class="mb-3">
+                <label for="skill_level" class="form-label">Select your skill level:</label>
+                <select class="form-select" name="skill_level" id="skill_level" required>
+                    <option value="" disabled selected>Choose your skill level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Upload and Analyze</button>
+        </form>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS for responsiveness -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
