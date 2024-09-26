@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CelloFingers - Upload Your Sheet Music</title>
-    <!-- Optional: Include Bootstrap for better styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include the compiled TailwindCSS output -->
+    <link href="/static/css/output.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex items-center justify-center">
+
+    <!-- Main container with TailwindCSS utility classes -->
+    <div class="container max-w-lg bg-white shadow-lg rounded-lg p-6">
         <!-- Page Header -->
-        <header class="mt-5">
-            <h1>CelloFingers</h1>
-            <p class="lead">Upload your cello sheet music and get recommended finger positions for optimal playing experience.</p>
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-600">CelloFingers</h1>
+            <p class="text-gray-600 mt-2">Upload your cello sheet music and get recommended finger positions for an optimal playing experience.</p>
         </header>
 
         <!-- Flash messages for errors or success notifications -->
         {% with messages = get_flashed_messages() %}
           {% if messages %}
-            <div class="alert alert-info">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6">
               {{ messages[0] }}
             </div>
           {% endif %}
         {% endwith %}
 
         <!-- Upload Form -->
-        <form action="/upload" method="POST" enctype="multipart/form-data">
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-6" id="upload-form">
             <!-- File Upload Input -->
-            <div class="mb-3">
-                <label for="file" class="form-label">Choose your sheet music file (PDF, JPG, or MusicXML):</label>
-                <input class="form-control" type="file" name="file" id="file" accept=".pdf, .jpg, .jpeg, .xml, .musicxml" required>
+            <div>
+                <label for="file" class="block text-sm font-medium text-gray-700">Choose your sheet music file (PDF, JPG, or MusicXML):</label>
+                <input class="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                       type="file" name="file" id="file" accept=".pdf, .jpg, .jpeg, .xml, .musicxml" required>
             </div>
 
             <!-- Skill Level Selection -->
-            <div class="mb-3">
-                <label for="skill_level" class="form-label">Select your skill level:</label>
-                <select class="form-select" name="skill_level" id="skill_level" required>
+            <div>
+                <label for="skill_level" class="block text-sm font-medium text-gray-700">Select your skill level:</label>
+                <select class="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        name="skill_level" id="skill_level" required>
                     <option value="" disabled selected>Choose your skill level</option>
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
@@ -44,11 +48,22 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary">Upload and Analyze</button>
+            <div>
+                <button type="submit" id="submit-btn"
+                        class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    Upload and Analyze
+                </button>
+            </div>
         </form>
+
+        <!-- Loading message -->
+        <div id="loading-message" class="hidden text-center mt-4 text-blue-600 font-semibold">
+            Processing your file, please wait...
+        </div>
     </div>
 
-    <!-- Optional: Include Bootstrap JS for responsiveness -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include the main JavaScript file -->
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
+
