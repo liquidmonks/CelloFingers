@@ -74,7 +74,7 @@ Provide a set of recommended fingering positions to manually add if the automati
 Download or review the modified sheet music.
 
 ## Folder Structure
-
+```plaintext
 CelloFingers/
 │
 ├── app/
@@ -95,7 +95,7 @@ CelloFingers/
 ├── requirements.txt        # Python dependencies
 ├── app.py                  # Entry point of the Flask application
 └── README.md               # Project documentation
-
+```
 ## Author
 
 Created by Liquid Monks
