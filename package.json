@@ -1,0 +1,18 @@
+{
+  "name": "cellofingers",
+  "version": "1.0.0",
+  "description": "CelloFingers is a Python web application designed to analyze cello sheet music and provide optimal fingering positions for the best playing experience. Whether you are a beginner, intermediate, or advanced cellist, CelloFingers will recommend finger positions based on your skill level and even modify the sheet music if possible. The application supports various sheet music formats such as PDF, JPG, and MusicXML.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
